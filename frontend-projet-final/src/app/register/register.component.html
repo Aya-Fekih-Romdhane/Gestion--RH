@@ -1,0 +1,65 @@
+<div class="account-pages pt-2 pt-sm-5 pb-4 pb-sm-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xxl-4 col-lg-5">
+                <div class="card">
+                    <!-- Logo-->
+                    <div class="card-header pt-4 pb-4 text-center bg-primary">
+                        <a href="index.html">
+                            <span><img src="assets/images/logo.png" alt="" height="18"></span>
+                        </a>
+                    </div>
+
+                    <div class="card-body p-4">
+                        
+                        <div class="text-center w-75 m-auto">
+                            <h4 class="text-dark-50 text-center mt-0 fw-bold">Free Sign Up</h4>
+                            <p class="text-muted mb-4">Don't have an account? Create your account, it takes less than a minute </p>
+                        </div>
+
+                        <div action="#">
+
+                            <div class="mb-3">
+                                <label for="fullname" class="form-label">Full Name</label>
+                                <input [(ngModel)]="admin.name" class="form-control" type="text" id="fullname" placeholder="Enter your name" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="emailaddress" class="form-label">Email address</label>
+                                <input [(ngModel)]="admin.email" class="form-control" type="email" id="emailaddress" required placeholder="Enter your email">
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <input  [(ngModel)]="admin.password" type="password" id="password" class="form-control" placeholder="Enter your password">
+                            </div>
+
+                           
+
+                            <div class="mb-3 text-center">
+                                <button (click)="register()" class="btn btn-primary" type="submit"> Sign Up </button>
+                            </div>
+
+                        </div>
+                    </div> <!-- end card-body -->
+                </div>
+                <!-- end card -->
+
+                <div class="row mt-3">
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Already have account? <a  [routerLink]="['/login']" class="text-muted ms-1"><b>Log In</b></a></p>
+                    </div> <!-- end col-->
+                </div>
+                <!-- end row -->
+
+            </div> <!-- end col -->
+        </div>
+        <!-- end row -->
+    </div>
+    <!-- end container -->
+</div>
+<!-- end page -->
+
+<footer class="footer footer-alt">
+    2018 - 2021 © Hyper - Coderthemes.com
+</footer>

@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row mt-5" style=" display: flex; justify-content:space-between;">
+        <h2 class="col-lg-4 ">Liste des clients </h2>
+
+        <button class="col-lg-2 btn btn-primary" [routerLink]="['/dashboard/gestionclient/ajout']">Ajouter</button>
+
+    </div>
+     <div class="row mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Entreprise</th>
+                    <th>Titre Projet</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of clients">
+                    <td> <img [src]=" 'http://127.0.0.1:3000/getimage/' + item.image" style="width:50px ;"> </td>
+                   <td> {{item.name}}</td>
+                   <td>  {{item.description}}</td>
+                   <td> {{item.entreprise}}</td>
+                   <td> {{item.titre_projet}}</td>
+                   <td >
+                    <button (click)="delete(item._id)" class="btn btn-outline-danger m-1">Delete</button>
+                    <button [routerLink]="['/dashboard/gestionclient/update/',item._id]" class="btn btn-outline-success ">Update</button>
+                </td> 
+                </tr>
+            </tbody>
+        </table>
+     </div>
+
+
+
+
+
+</div>

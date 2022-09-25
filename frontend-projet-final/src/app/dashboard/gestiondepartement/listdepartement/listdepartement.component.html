@@ -1,0 +1,47 @@
+<div class="container">
+
+    <div class="row mt-5 first-row">
+        <h2 class="col-lg-4">Liste des departements</h2>
+
+        <button class="btn btn-dark col-lg-3 h-75" [routerLink]="['/dashboard/gestiondepartement/ajout']"> Ajouter </button>
+
+    </div>
+    <div class="row mt-5">
+      
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Description </th>
+                    <th>N° Etage </th>
+                    <th>N° Salle</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of departement ;let i = index ">
+                    <td>{{i+1}} </td>
+                    <td>{{item.name}}</td>
+                    <td>{{item.description}}</td>
+                    <td>{{item.salle}}</td>
+                    <td>{{item.etage}}</td>
+                    <td>
+                        <button (click)="supprimer(item._id)" class="btn btn-danger m-1">Supprimer</button>
+                        <button  class="btn btn-info m-1" [routerLink]="['/dashboard/gestiondepartement/update/', item._id ]" >Modifier</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+
+
+
+
+
+</div>

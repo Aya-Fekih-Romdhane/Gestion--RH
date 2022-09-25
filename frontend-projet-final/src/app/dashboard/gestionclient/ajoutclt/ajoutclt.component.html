@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="row mt-2">
+        <h2>Ajouter un client :</h2>
+
+        <div class="col-lg-6 mx-auto mt-5">
+
+            <input [(ngModel)]="client.name" type="text" class="form-control m-2 " placeholder="Name">
+            <input [(ngModel)]="client.description" type="text" class="form-control m-2 " placeholder="Description">
+            <input [(ngModel)]="client.entreprise" type="text" class="form-control m-2 " placeholder="Entreprise">
+            <input [(ngModel)]="client.titre_projet" type="text" class="form-control m-2 " placeholder="titre projet">
+           
+            <input (change)="selectImage($event)"  type="file" class="form-control m-2 " placeholder="Image">       
+            <button (click)="ajout()" class="btn btn-success m-2 form-control">Ajouter</button>
+
+
+        </div>
+
+    </div>
+
+
+</div>

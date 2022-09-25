@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="row mt-5 first-row">
+        <h2 class="col-lg-4 ">Liste des employées </h2>
+
+        <button class="col-lg-2 btn btn-primary" [routerLink]="['/dashboard/gestionemployee/ajout']">Ajouter</button>
+
+    </div>
+     <div class="row mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>LastName</th>
+                   
+                    <th>Téléphone</th>
+                    <th>Email</th>
+                    <th>Adresse</th>
+                    <th>Departement (e,s)</th>
+                    <th>Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of employees">
+                    <td> <img [src]=" 'http://127.0.0.1:3000/getimage/' + item.image" style="width:50px ;"> </td>
+                   <td> {{item.name}}</td>
+                   <td>  {{item.lastname}}</td>
+                   <td> {{item.tel}}</td>
+                   <td> {{item.email}}</td>
+                   <td> {{item.adress}}</td>
+                   <td>{{item.dep[0].name +','+'('+ item.dep[0].etage +','+ item.dep[0].salle +')'}} </td>
+                   <td >
+                    <button (click)="delete(item._id)" class="btn btn-outline-danger m-1">Delete !</button>
+                    <button [routerLink]="['/dashboard/gestionemployee/update/',item._id]" class="btn btn-outline-success m-1 ">Update</button>
+                </td> 
+                </tr>
+            </tbody>
+        </table>
+     </div>
+
+
+
+
+
+</div>
